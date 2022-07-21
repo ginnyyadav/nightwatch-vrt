@@ -27,8 +27,8 @@ exports.assertion = function screenshotIdenticalToBaseline(
     settings,
     message
 ) {
+    this.message = message || `Visual regression test results for element <${elementId.name}>.` 
 
-    this.message = message || `Visual regression test results for element <${elementId}>.`
     this.expected = true
 
     this.pass = function pass(value) {

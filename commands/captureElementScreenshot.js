@@ -71,13 +71,13 @@ CaptureElementScreenshot.prototype.command = function command(
 
             screenshot.crop(x, y, width, height)
 
-            this.api.assert.ok(true, `The screenshot for selector <${selector}> was captured successfully.`);
+            this.api.assert.ok(true, `The screenshot for selector <${selector.name}> was captured successfully.`);
 
             callback(screenshot)
             this.emit('complete', screenshot)
         })
     }).catch((errorMessage) => {
-        this.api.assert.fail(`The screenshot for selector <${selector}> could not be captured.`);
+        this.api.assert.fail(`The screenshot for selector <${selector.name}> could not be captured.`);
         this.emit('complete', errorMessage, this)
     })
 }
